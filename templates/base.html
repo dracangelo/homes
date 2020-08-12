@@ -74,11 +74,11 @@
           <div class="probootstrap-footer-widget probootstrap-link-wrap">
             <h4 class="heading">Quick Links</h4>
             <ul class="stack-link">
-              <li><a href="#">Property Listing</a></li>
-              <li><a href="#">Rent Properties</a></li>
-              <li><a href="#">Sell Properties</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Testimonial</a></li>
+              <li {% if category_lists %}class="active" {% endif %}><a href="/">Home</a></li>
+              <li {% if property_list %}class="active" {% endif %}><a href="{% url 'property:property_list' %}">Properties</a></li>
+              <li {% if agent_list %}class="active" {% endif %}><a href="{% url 'agents:agents_list' %}">Agents</a></li>
+              <li {% if about %}class="active" {% endif %}><a href="{% url 'about:about' %}">About</a></li>
+              <li {% if contact %}class="active" {% endif %}><a href="{% url 'contact:send_mail' %}">Contact</a></li>
             </ul>
           </div>
         </div>

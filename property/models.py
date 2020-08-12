@@ -4,7 +4,8 @@ from django.db import models
 
 property_type = (
     ('sale' , "sale"),
-    ('rent' , "rent")
+    ('rent' , "rent"),
+    ('land', "land")
 )
 class Property(models.Model):
     name = models.CharField(max_length=50)
