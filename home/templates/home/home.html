@@ -78,7 +78,7 @@
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading">Affordable Houses</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <p><a href="#">Find out more</a></p>
+              <p><a href="{% url 'property:property_list' %}">Find out more</a></p>
             </div>
           </div>
         </div>
@@ -95,8 +95,8 @@
       <div class="row probootstrap-gutter10">
         {% for category in category_lists %}
         <div class="col-md-6 col-sm-6">
-          <a href="#" class="probootstrap-hover-overlay">
-            <img src="media/{{category.image}}" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+          <a href="{% url 'property:property_list' %}" class="probootstrap-hover-overlay">
+            <img src="media/{{category.image}}" alt="" class="img-responsive img-fluid">
             <div class="probootstrap-text-overlay">
               <h3>{{ category.category_name }}</h3>
               <p>{{ category.property_count }} Properties</p>
@@ -114,7 +114,7 @@
     <div class="container text-center probootstrap-animate" data-animate-effect="fadeIn">
       <h2 class="heading">Best Home &amp; Properties</h2>
       <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-      <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>
+      <p><a href="{% url 'property:property_list' %}" class="btn btn-primary mb10">Find out more</a></p>
     </div>
   </section>
   <!-- END: section -->
@@ -129,13 +129,12 @@
         <div class="col-md-4 col-sm-6">
           <div class="probootstrap-card probootstrap-listing">
             <div class="probootstrap-card-media">
-              <img src="{{ property.image.url }}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+              <img src="{{ property.image.url }}" class="img-responsive img-fluid" alt="">
               
             </div>
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading"><a href="#">{{ property }}</a></h2>
               <div class="probootstrap-listing-location">
-                <i class="icon-location2"></i> <span>360 W Wellington Chicago, IL 60657</span>
               </div>
               <div class="probootstrap-listing-category for-sale"><span>{{ property.property_type }}</span></div>
               <div class="probootstrap-listing-price"><strong>$ {{property.price}}</strong> / month</div>
@@ -236,9 +235,9 @@
       <div class="row">
         {% for agent in agent_listing %}
         <div class="col-md-3">
-          <div class="probootstrap-card probootstrap-person text-left">
-            <div class="probootstrap-card-media">
-              <img src="{{ agent.image.url }}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+          <div class="">
+            <div class="">
+              <img src="{{ agent.image.url }}" class="img-responsive img-fluid" alt="">
             </div>
             <div class="probootstrap-card-text">
               <h2 class="probootstrap-card-heading mb0">{{ agent }}</h2>
